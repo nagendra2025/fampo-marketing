@@ -19,6 +19,7 @@ import {
   HelpCircle,
   Zap
 } from "lucide-react";
+import FampoLogo from "@/components/FampoLogo";
 
 export default function Home() {
   return (
@@ -31,44 +32,40 @@ export default function Home() {
         <nav className="w-full border-b bg-white/80 backdrop-blur-sm shadow-sm transition-transform duration-500 ease-in-out -translate-y-full group-hover:translate-y-0">
           <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md">
-                <Users className="h-5 w-5" />
-              </div>
-              <span className="text-xl font-semibold text-zinc-900">Famjam</span>
+              <FampoLogo size={40} className="rounded-lg shadow-md" />
+              <span className="text-xl font-semibold text-zinc-900">Fampo</span>
             </div>
-            <div className="hidden items-center gap-1 md:flex">
+            <div className="hidden items-center gap-2 md:flex">
               <a 
                 href="#how-it-works" 
-                className="nav-link group/link relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-blue-50 hover:text-blue-700"
+                className="nav-link group/link relative flex items-center gap-2 rounded-full bg-blue-50/80 px-5 py-2.5 text-sm font-bold text-blue-700 shadow-sm transition-all hover:bg-blue-100 hover:text-blue-800 hover:shadow-md hover:scale-105"
               >
                 <Zap className="h-4 w-4 transition-transform group-hover/link:scale-110" />
                 <span>How It Works</span>
-                <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-blue-600 to-blue-700 transition-transform group-hover/link:scale-x-100"></span>
               </a>
               <a 
                 href="#features" 
-                className="nav-link group/link relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-green-50 hover:text-green-700"
+                className="nav-link group/link relative flex items-center gap-2 rounded-full bg-green-50/80 px-5 py-2.5 text-sm font-bold text-green-700 shadow-sm transition-all hover:bg-green-100 hover:text-green-800 hover:shadow-md hover:scale-105"
               >
                 <Sparkles className="h-4 w-4 transition-transform group-hover/link:scale-110" />
                 <span>Features</span>
-                <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-green-600 to-green-700 transition-transform group-hover/link:scale-x-100"></span>
               </a>
               <a 
                 href="#faq" 
-                className="nav-link group/link relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-purple-50 hover:text-purple-700"
+                className="nav-link group/link relative flex items-center gap-2 rounded-full bg-purple-50/80 px-5 py-2.5 text-sm font-bold text-purple-700 shadow-sm transition-all hover:bg-purple-100 hover:text-purple-800 hover:shadow-md hover:scale-105"
               >
                 <HelpCircle className="h-4 w-4 transition-transform group-hover/link:scale-110" />
                 <span>FAQ</span>
-                <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-purple-600 to-purple-700 transition-transform group-hover/link:scale-x-100"></span>
+              </a>
+              <a 
+                href="#pricing" 
+                className="nav-link group/link relative flex items-center gap-2 rounded-full bg-pink-50/80 px-5 py-2.5 text-sm font-bold text-pink-700 shadow-sm transition-all hover:bg-pink-100 hover:text-pink-800 hover:shadow-md hover:scale-105"
+              >
+                <CreditCard className="h-4 w-4 transition-transform group-hover/link:scale-110" />
+                <span>Pricing</span>
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <a
-                href="#pricing"
-                className="rounded-full border border-zinc-300 bg-white px-5 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-              >
-                Pricing
-              </a>
               <a
                 href="#join-waitlist"
                 className="rounded-full bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2 text-sm font-medium text-white shadow-md transition-all hover:shadow-lg hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
@@ -245,7 +242,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-7 text-white shadow-xl">
-              <h3 className="mb-4 text-xl font-semibold">The Famjam Solution</h3>
+              <h3 className="mb-4 text-xl font-semibold">The Fampo Solution</h3>
               <ul className="space-y-2.5">
                 <li className="flex items-start gap-3">
                   <Check className="mt-1 h-5 w-5 flex-shrink-0" />
@@ -278,7 +275,7 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="mb-5 text-center sm:mb-6">
             <h2 className="mb-1.5 text-3xl font-bold text-zinc-900 sm:text-4xl sm:mb-2">
-              Why Families Love Famjam
+              Why Families Love Fampo
             </h2>
             <p className="text-base text-zinc-600 sm:text-lg">
               Built specifically for families, not corporate teams
@@ -361,7 +358,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-base font-semibold text-zinc-900 sm:text-lg">Get Reminders Automatically</h3>
               <p className="text-xs leading-relaxed text-zinc-600 sm:text-sm">
-                Famjam sends WhatsApp and SMS reminders automatically. Your family stays informed without any extra effort.
+                Fampo sends WhatsApp and SMS reminders automatically. Your family stays informed without any extra effort.
               </p>
             </div>
           </div>
@@ -458,19 +455,19 @@ export default function Home() {
                 </div>
                 <h3 className="mb-1.5 text-sm font-bold text-zinc-900 sm:text-base">Family Members</h3>
                 <p className="text-xs leading-snug text-zinc-600">
-                  Access Famjam from any web browser. Simple, secure, and accessible.
+                  Access Fampo from any web browser. Simple, secure, and accessible.
                 </p>
                 <div className="absolute -right-2 top-1/2 hidden h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-white text-blue-600 shadow-lg lg:flex">
                   <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </div>
 
-              {/* Famjam Platform Card */}
+              {/* Fampo Platform Card */}
               <div className="group relative rounded-2xl bg-gradient-to-br from-green-50/80 to-white p-3 text-center shadow-md transition-all hover:shadow-xl hover:scale-[1.02] sm:p-4 lg:text-left">
                 <div className="mb-2 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-green-600 text-white shadow-lg transition-transform group-hover:scale-110 group-hover:rotate-3 sm:mb-3 sm:h-12 sm:w-12 lg:mx-0">
                   <Sparkles className="h-6 w-6 sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="mb-1.5 text-sm font-bold text-zinc-900 sm:text-base">Famjam Platform</h3>
+                <h3 className="mb-1.5 text-sm font-bold text-zinc-900 sm:text-base">Fampo Platform</h3>
                 <p className="text-xs leading-snug text-zinc-600">
                   Your shared dashboard with calendar, tasks, notes, memories, and smart organization.
                 </p>
@@ -548,28 +545,28 @@ export default function Home() {
               Frequently Asked Questions
             </h2>
             <p className="text-base text-zinc-600 sm:text-lg">
-              Everything you need to know about Famjam
+              Everything you need to know about Fampo
             </p>
           </div>
           <div className="space-y-3">
             <div className="rounded-2xl bg-gradient-to-br from-white to-zinc-50 p-4 shadow-sm sm:p-5">
               <h3 className="mb-2 text-base font-semibold text-zinc-900 sm:text-lg">Is it private?</h3>
               <p className="text-xs leading-relaxed text-zinc-600 sm:text-sm">
-                Yes! Famjam uses row-level security to ensure only your family members can access your dashboard. 
+                Yes! Fampo uses row-level security to ensure only your family members can access your dashboard. 
                 Your data is encrypted and stored securely. We never share your information with third parties.
               </p>
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-white to-zinc-50 p-4 shadow-sm sm:p-5">
               <h3 className="mb-2 text-base font-semibold text-zinc-900 sm:text-lg">Is it for kids & elders?</h3>
               <p className="text-xs leading-relaxed text-zinc-600 sm:text-sm">
-                Absolutely! Famjam is designed to be simple and intuitive for all ages. The interface is clean, 
-                easy to read, and accessible. Whether you're 8 or 80, you'll find Famjam easy to use.
+                Absolutely! Fampo is designed to be simple and intuitive for all ages. The interface is clean, 
+                easy to read, and accessible. Whether you're 8 or 80, you'll find Fampo easy to use.
               </p>
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-white to-zinc-50 p-4 shadow-sm sm:p-5">
               <h3 className="mb-2 text-base font-semibold text-zinc-900 sm:text-lg">Do I need WhatsApp?</h3>
               <p className="text-xs leading-relaxed text-zinc-600 sm:text-sm">
-                While WhatsApp reminders are a convenient feature, they're not required. Famjam works perfectly 
+                While WhatsApp reminders are a convenient feature, they're not required. Fampo works perfectly 
                 as a web-based dashboard. You can also receive SMS reminders as an alternative, and all information 
                 is available in your dashboard at any time.
               </p>
@@ -684,7 +681,7 @@ export default function Home() {
             Ready to Organize Your Family?
           </h2>
           <p className="mb-8 text-lg leading-relaxed text-blue-50 sm:text-xl">
-            Join thousands of families who are staying connected and organized with Famjam.
+            Join thousands of families who are staying connected and organized with Fampo.
           </p>
           <div className="mx-auto max-w-md">
             <div className="mb-4 flex flex-col gap-3 sm:flex-row">
@@ -719,10 +716,8 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="mb-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md">
-                <Users className="h-5 w-5" />
-              </div>
-              <span className="text-xl font-semibold text-zinc-900">Famjam</span>
+              <FampoLogo size={40} className="rounded-lg shadow-md" />
+              <span className="text-xl font-semibold text-zinc-900">Fampo</span>
             </div>
             <a
               href="#pricing"
@@ -736,7 +731,7 @@ export default function Home() {
             <p className="mb-2 text-sm font-medium text-zinc-900">Complete Family Organization. Happiness Delivered.</p>
             <p className="mb-3 text-sm text-zinc-600">Built with ❤️ for families everywhere</p>
             <p className="text-xs text-zinc-500">
-              © 2026 Famjam. All rights reserved.
+              © 2026 Fampo. All rights reserved.
             </p>
           </div>
         </div>
