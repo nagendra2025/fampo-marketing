@@ -23,57 +23,62 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-sm shadow-sm">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md">
-              <Users className="h-5 w-5" />
+      {/* Navigation with Hover Animation */}
+      <div className="nav-wrapper group fixed top-0 z-50 w-full">
+        {/* Hover Trigger Area at Top */}
+        <div className="h-4 w-full"></div>
+        {/* Navigation Bar */}
+        <nav className="w-full border-b bg-white/80 backdrop-blur-sm shadow-sm transition-transform duration-500 ease-in-out -translate-y-full group-hover:translate-y-0">
+          <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-md">
+                <Users className="h-5 w-5" />
+              </div>
+              <span className="text-xl font-semibold text-zinc-900">Famjam</span>
             </div>
-            <span className="text-xl font-semibold text-zinc-900">Famjam</span>
+            <div className="hidden items-center gap-1 md:flex">
+              <a 
+                href="#how-it-works" 
+                className="nav-link group/link relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-blue-50 hover:text-blue-700"
+              >
+                <Zap className="h-4 w-4 transition-transform group-hover/link:scale-110" />
+                <span>How It Works</span>
+                <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-blue-600 to-blue-700 transition-transform group-hover/link:scale-x-100"></span>
+              </a>
+              <a 
+                href="#features" 
+                className="nav-link group/link relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-green-50 hover:text-green-700"
+              >
+                <Sparkles className="h-4 w-4 transition-transform group-hover/link:scale-110" />
+                <span>Features</span>
+                <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-green-600 to-green-700 transition-transform group-hover/link:scale-x-100"></span>
+              </a>
+              <a 
+                href="#faq" 
+                className="nav-link group/link relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-purple-50 hover:text-purple-700"
+              >
+                <HelpCircle className="h-4 w-4 transition-transform group-hover/link:scale-110" />
+                <span>FAQ</span>
+                <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-purple-600 to-purple-700 transition-transform group-hover/link:scale-x-100"></span>
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <a
+                href="#pricing"
+                className="rounded-full border border-zinc-300 bg-white px-5 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              >
+                Pricing
+              </a>
+              <a
+                href="#join-waitlist"
+                className="rounded-full bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2 text-sm font-medium text-white shadow-md transition-all hover:shadow-lg hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              >
+                Join Waitlist
+              </a>
+            </div>
           </div>
-          <div className="hidden items-center gap-1 md:flex">
-            <a 
-              href="#how-it-works" 
-              className="group relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-blue-50 hover:text-blue-700"
-            >
-              <Zap className="h-4 w-4 transition-transform group-hover:scale-110" />
-              <span>How It Works</span>
-              <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-blue-600 to-blue-700 transition-transform group-hover:scale-x-100"></span>
-            </a>
-            <a 
-              href="#features" 
-              className="group relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-green-50 hover:text-green-700"
-            >
-              <Sparkles className="h-4 w-4 transition-transform group-hover:scale-110" />
-              <span>Features</span>
-              <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-green-600 to-green-700 transition-transform group-hover:scale-x-100"></span>
-            </a>
-            <a 
-              href="#faq" 
-              className="group relative flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:bg-purple-50 hover:text-purple-700"
-            >
-              <HelpCircle className="h-4 w-4 transition-transform group-hover:scale-110" />
-              <span>FAQ</span>
-              <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-purple-600 to-purple-700 transition-transform group-hover:scale-x-100"></span>
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <a
-              href="#pricing"
-              className="rounded-full border border-zinc-300 bg-white px-5 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-            >
-              Pricing
-            </a>
-            <a
-              href="#join-waitlist"
-              className="rounded-full bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2 text-sm font-medium text-white shadow-md transition-all hover:shadow-lg hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-            >
-              Join Waitlist
-            </a>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/50 via-white to-white px-4 pt-6 pb-4 sm:px-6 sm:pt-8 sm:pb-6 lg:px-8 lg:pt-10 lg:pb-8">
@@ -169,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* Transition Showcase Section */}
-      <section className="relative overflow-hidden border-y border-zinc-200 bg-gradient-to-r from-white via-blue-50/30 to-white px-4 py-10 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden border-y border-zinc-200 bg-gradient-to-r from-white via-blue-50/30 to-white px-4 pt-16 pb-10 sm:px-6 sm:pt-20 lg:px-8 lg:pt-24">
         <div className="container mx-auto max-w-6xl">
           <div className="grid gap-6 md:grid-cols-3">
             <div className="group flex items-center gap-4 rounded-xl bg-white p-5 shadow-sm transition-all hover:shadow-md">
@@ -490,7 +495,7 @@ export default function Home() {
       </section>
 
       {/* Trust & Security */}
-      <section className="bg-zinc-50 px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
+      <section className="bg-zinc-50 px-4 py-4 pb-16 sm:px-6 sm:py-6 sm:pb-20 lg:px-8 lg:pb-24">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-4 text-center sm:mb-5">
             <h2 className="mb-1 text-3xl font-bold text-zinc-900 sm:text-4xl sm:mb-1.5">
