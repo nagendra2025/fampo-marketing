@@ -173,8 +173,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Spacer to push transition section below viewport */}
+      <div className="hero-transition-spacer"></div>
+
       {/* Transition Showcase Section */}
-      <section className="relative overflow-hidden border-y border-zinc-200 bg-gradient-to-r from-white via-blue-50/30 to-white px-4 pt-16 pb-10 sm:px-6 sm:pt-20 lg:px-8 lg:pt-24">
+      <section className="relative overflow-hidden border-y border-zinc-200 bg-gradient-to-r from-white via-blue-50/30 to-white px-4 pb-10 sm:px-6 lg:px-8 viewport-push-up">
         <div className="container mx-auto max-w-6xl">
           <div className="grid gap-6 md:grid-cols-3">
             <div className="group flex items-center gap-4 rounded-xl bg-white p-5 shadow-sm transition-all hover:shadow-md">
@@ -271,7 +274,7 @@ export default function Home() {
       </section>
 
       {/* Key Benefits */}
-      <section className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section className="px-4 sm:px-6 lg:px-8 viewport-section-spacing">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-5 text-center sm:mb-6">
             <h2 className="mb-1.5 text-3xl font-bold text-zinc-900 sm:text-4xl sm:mb-2">
@@ -323,7 +326,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="bg-white px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section id="how-it-works" className="bg-white px-4 sm:px-6 lg:px-8 viewport-section-spacing">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-5 text-center sm:mb-6">
             <h2 className="mb-1.5 text-3xl font-bold text-zinc-900 sm:text-4xl sm:mb-2">
@@ -436,7 +439,7 @@ export default function Home() {
       </section>
 
       {/* Architecture at a Glance */}
-      <section className="bg-gradient-to-b from-white via-blue-50/30 to-white px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
+      <section className="bg-gradient-to-b from-white via-blue-50/30 to-white px-4 sm:px-6 lg:px-8 viewport-section-spacing">
         <div className="container mx-auto max-w-5xl">
           <div className="mb-4 text-center sm:mb-5">
             <h2 className="mb-1 text-3xl font-bold text-zinc-900 sm:text-4xl sm:mb-1.5">
@@ -495,7 +498,7 @@ export default function Home() {
       </section>
 
       {/* Trust & Security */}
-      <section className="bg-zinc-50 px-4 py-4 pb-16 sm:px-6 sm:py-6 sm:pb-20 lg:px-8 lg:pb-24">
+      <section className="bg-zinc-50 px-4 sm:px-6 lg:px-8 trust-security-section">
         <div className="container mx-auto max-w-6xl">
           <div className="mb-4 text-center sm:mb-5">
             <h2 className="mb-1 text-3xl font-bold text-zinc-900 sm:text-4xl sm:mb-1.5">
