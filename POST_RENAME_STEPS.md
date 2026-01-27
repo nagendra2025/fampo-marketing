@@ -112,16 +112,69 @@ If you're using Vercel for deployment:
    - Select your renamed `fampo-marketing` repository
    - Confirm the connection
 
-3. **Rename Project (Optional):**
+3. **Rename Project:**
    - Go to **Settings** → **General**
    - Find **"Project Name"**
-   - Change to: `fampo-marketing` (optional, but recommended)
+   - Change to: `fampo-marketing`
    - Click **"Save"**
+   - ⚠️ Note: This will automatically create a new domain `fampo-marketing.vercel.app`
 
-4. **Redeploy:**
+4. **Update Domains (IMPORTANT - Remove Old Domains and Add New One):**
+
+   **Step 4a: Remove Old Domains**
+   
+   For each old domain (`fampo.vercel.app` and `famjam-eta.vercel.app`):
+   
+   - Go to **Settings** → **Domains**
+   - Find the domain you want to remove (e.g., `fampo.vercel.app`)
+   - Click the **"Edit"** button next to the domain
+   - In the edit dialog/modal that opens, look for:
+     - A **"Remove"** or **"Delete"** button (usually at the bottom)
+     - Or a trash/delete icon
+     - Or a dropdown menu with "Remove Domain" option
+   - Click **"Remove"** or **"Delete"**
+   - Confirm the removal when prompted
+   - Repeat for the second old domain (`famjam-eta.vercel.app`)
+   
+   **Alternative method if "Edit" doesn't show remove option:**
+   - Click on the domain name itself (not the Edit button)
+   - This might open a detail view where you can remove it
+   - Or try right-clicking on the domain row
+   
+   **Step 4b: Add New Domain**
+   
+   - In the **Settings** → **Domains** page
+   - Click the **"Add Existing"** button (top right)
+   - In the input field, type: `fampo-marketing.vercel.app`
+   - Click **"Add"** or **"Save"**
+   - Wait for Vercel to configure it (shows "Valid Configuration" when ready)
+   
+   **Note:** If `fampo-marketing.vercel.app` already appears automatically after renaming the project, you can skip Step 4b. Just verify it shows "Valid Configuration".
+
+5. **Redeploy:**
    - Go to **Deployments** tab
    - Click **"Redeploy"** on the latest deployment
    - Or push a new commit to trigger auto-deployment
+
+---
+
+## ⚠️ Important: Domain Behavior After Renaming
+
+**Why `fampo.vercel.app` still works:**
+- When you rename a Vercel project, the old domain (`fampo.vercel.app`) doesn't automatically stop working
+- Vercel keeps both domains active until you explicitly remove the old one
+- The new domain (`fampo-marketing.vercel.app`) is automatically created when you rename the project
+
+**To stop the old domain:**
+1. Go to **Settings** → **Domains** in Vercel
+2. Find `fampo.vercel.app` in the list
+3. Click **Remove** (or the three dots menu → Remove)
+4. Confirm the removal
+
+**After removing:**
+- `fampo.vercel.app` will stop working (may take a few minutes)
+- Only `fampo-marketing.vercel.app` will be active
+- Any traffic to the old domain will get an error
 
 ---
 
@@ -175,6 +228,44 @@ After completing all steps, verify:
 - Check that GitHub repository name matches exactly
 - Verify git remote URL is correct
 - Try disconnecting and reconnecting the repository in Vercel
+
+**If you can't find the "Remove" option for domains in Vercel:**
+
+Try these methods in order:
+
+1. **Method 1: Edit Button**
+   - Click **"Edit"** next to the domain
+   - Look for a "Remove" or "Delete" button in the modal/dialog
+   - It might be at the bottom, or in a dropdown menu within the edit dialog
+
+2. **Method 2: Click on Domain Name**
+   - Click directly on the domain name (e.g., `fampo.vercel.app`)
+   - This might open a detail page where you can remove it
+
+3. **Method 3: Hover for Options**
+   - Hover your mouse over the domain row
+   - Look for a trash icon or three-dot menu that appears on hover
+
+4. **Method 4: Use Vercel CLI (Alternative)**
+   ```bash
+   # Install Vercel CLI if you haven't
+   npm i -g vercel
+   
+   # Login to Vercel
+   vercel login
+   
+   # Remove domain (replace with your actual domain)
+   vercel domains remove fampo.vercel.app
+   vercel domains remove famjam-eta.vercel.app
+   
+   # Add new domain
+   vercel domains add fampo-marketing.vercel.app
+   ```
+
+5. **Method 5: Contact Vercel Support**
+   - If none of the above work, the domain might be locked or there's a UI issue
+   - Go to Vercel Dashboard → Help/Support
+   - Ask them to remove the old domains manually
 
 ---
 
