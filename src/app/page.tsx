@@ -85,9 +85,9 @@ export default function Home() {
             <span>Coming Soon</span>
           </div>
           <h1 className="mb-2 text-4xl font-bold leading-tight tracking-tight text-zinc-900 sm:text-5xl sm:mb-3 lg:text-6xl">
-            The Ultimate Family
+            The Ultimate FAMily PlatfOrm
             <br />
-            <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Organization App</span>
+            <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Dashboard App</span>
           </h1>
           <p className="mb-3 text-lg leading-relaxed text-zinc-600 sm:text-xl sm:mb-4 lg:mx-auto lg:max-w-2xl">
             A calm, modern, and secure digital family dashboard that helps families stay organized, 
@@ -728,7 +728,7 @@ export default function Home() {
             </a>
           </div>
           <div className="border-t border-zinc-200 pt-6 text-center">
-            <p className="mb-2 text-sm font-medium text-zinc-900">Complete Family Organization. Happiness Delivered.</p>
+            <p className="mb-2 text-sm font-medium text-zinc-900">Complete FAMily PlatfOrm Dashboard application ! Happiness Delivered !!</p>
             <p className="mb-3 text-sm text-zinc-600">Built with ❤️ for families everywhere</p>
             <p className="text-xs text-zinc-500">
               © 2026 Fampo. All rights reserved.

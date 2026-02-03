@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fampo - The Ultimate Family Organization App",
+  title: "Fampo - The Ultimate FAMily PlatfOrm Dashboard App",
   description: "A calm, modern, and secure digital family dashboard that helps families stay organized, connected, and informed. Streamline family coordination with WhatsApp reminders, shared calendars, tasks, and memories.",
 };
 
