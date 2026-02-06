@@ -20,6 +20,7 @@ import {
   Zap
 } from "lucide-react";
 import FampoLogo from "@/components/FampoLogo";
+import WaitlistForm from "@/components/WaitlistForm";
 
 export default function Home() {
   return (
@@ -594,46 +595,30 @@ export default function Home() {
             </p>
           </div>
           <div className="rounded-3xl bg-white p-8 shadow-xl lg:p-12">
-            <div className="mb-8 flex items-center justify-center gap-3 rounded-xl bg-amber-50 px-6 py-4 text-center">
-              <Wrench className="h-5 w-5 text-amber-600" />
-              <p className="text-sm font-medium text-amber-800">
-                Subscription and payment features are currently under development. We'll announce pricing plans soon!
-              </p>
-            </div>
-            <div className="grid gap-8 md:grid-cols-3">
-              <div className="rounded-2xl border-2 border-zinc-200 bg-gradient-to-br from-white to-zinc-50 p-6">
-                <h3 className="mb-2 text-xl font-bold text-zinc-900">Free</h3>
-                <div className="mb-4">
-                  <span className="text-3xl font-bold text-zinc-900">$0</span>
-                  <span className="text-zinc-600">/month</span>
-                </div>
-                <ul className="mb-6 space-y-2 text-sm text-zinc-600">
-                  <li className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
-                    <span>Basic family dashboard</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
-                    <span>Up to 5 family members</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
-                    <span>Calendar & tasks</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="rounded-2xl border-2 border-blue-500 bg-gradient-to-br from-blue-50 to-white p-6 shadow-lg">
+            <div className="flex justify-center">
+              <div className="w-full max-w-md rounded-2xl border-2 border-blue-500 bg-gradient-to-br from-blue-50 to-white p-6 shadow-lg">
                 <div className="mb-2 inline-block rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white">
                   Most Popular
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-zinc-900">Family</h3>
                 <div className="mb-4">
-                  <span className="text-3xl font-bold text-zinc-900">Coming Soon</span>
+                  <div className="mb-2">
+                    <span className="text-2xl font-bold text-zinc-900 line-through text-zinc-400">$62</span>
+                    <span className="text-3xl font-bold text-zinc-900 ml-2">$44</span>
+                    <span className="text-zinc-600"> CAD/month</span>
+                  </div>
+                  <div className="inline-block rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-800">
+                    Early Bird Price
+                  </div>
+                </div>
+                <div className="mb-4 rounded-lg bg-blue-50 p-3 text-xs text-blue-800">
+                  <p className="font-semibold mb-1">🎁 2-Month Free Trial</p>
+                  <p className="text-blue-700">Start your free trial when you create your account!</p>
                 </div>
                 <ul className="mb-6 space-y-2 text-sm text-zinc-600">
                   <li className="flex items-start gap-2">
                     <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
-                    <span>Everything in Free</span>
+                    <span>Complete family dashboard</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
@@ -641,31 +626,19 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
-                    <span>WhatsApp & SMS reminders</span>
+                    <span>Shared calendar & events</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
+                    <span>Task management</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
+                    <span>SMS reminders</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
                     <span>Photo storage</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="rounded-2xl border-2 border-zinc-200 bg-gradient-to-br from-white to-zinc-50 p-6">
-                <h3 className="mb-2 text-xl font-bold text-zinc-900">Premium</h3>
-                <div className="mb-4">
-                  <span className="text-3xl font-bold text-zinc-900">Coming Soon</span>
-                </div>
-                <ul className="mb-6 space-y-2 text-sm text-zinc-600">
-                  <li className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
-                    <span>Everything in Family</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
-                    <span>Advanced features</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-green-600" />
-                    <span>Priority support</span>
                   </li>
                 </ul>
               </div>
@@ -683,31 +656,7 @@ export default function Home() {
           <p className="mb-8 text-lg leading-relaxed text-blue-50 sm:text-xl">
             Join thousands of families who are staying connected and organized with Fampo.
           </p>
-          <div className="mx-auto max-w-md">
-            <div className="mb-4 flex flex-col gap-3 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 rounded-full border-2 border-white/20 bg-white/95 px-6 py-3.5 text-base font-medium text-zinc-900 placeholder:text-zinc-500 shadow-lg backdrop-blur-sm focus:border-white/40 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-blue-700"
-                aria-label="Email address for waitlist"
-              />
-              <button
-                type="button"
-                className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-600 shadow-lg transition-all hover:bg-blue-50 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-blue-700"
-              >
-                Join Waitlist
-              </button>
-            </div>
-            <div className="mb-4 rounded-xl bg-white/10 px-4 py-3 text-sm text-blue-100 backdrop-blur-sm">
-              <p className="font-medium">
-                <Wrench className="mr-2 inline h-4 w-4" />
-                Waitlist feature is currently under development
-              </p>
-            </div>
-            <p className="text-sm text-blue-100">
-              Early access • No spam • Unsubscribe anytime
-            </p>
-          </div>
+          <WaitlistForm />
         </div>
       </section>
 
@@ -739,3 +688,5 @@ export default function Home() {
     </div>
   );
 }
+
+
