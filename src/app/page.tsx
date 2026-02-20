@@ -17,12 +17,19 @@ import {
   TrendingUp,
   Heart,
   HelpCircle,
-  Zap
+  Zap,
+  AlertCircle
 } from "lucide-react";
 import FampoLogo from "@/components/FampoLogo";
 import WaitlistForm from "@/components/WaitlistForm";
+import SubscriptionAwareButtons, { CanceledSubscriptionBannerWrapper } from "@/components/SubscriptionAwareButtons";
+import Link from 'next/link';
 
 export default function Home() {
+  // WHY: Removed server-side subscription check to prevent hydration errors
+  // Subscription check is now done in client component (SubscriptionAwareButtons)
+  // This ensures consistent rendering between server and client (no hydration mismatch)
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white">
       {/* Navigation with Hover Animation */}
@@ -67,6 +74,12 @@ export default function Home() {
               </a>
             </div>
             <div className="flex items-center gap-3">
+              <Link
+                href="/signup"
+                className="rounded-full border-2 border-blue-600 bg-white px-5 py-2 text-sm font-medium text-blue-600 shadow-sm transition-all hover:bg-blue-50 hover:shadow-md hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              >
+                Sign Up
+              </Link>
               <a
                 href="#join-waitlist"
                 className="rounded-full bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2 text-sm font-medium text-white shadow-md transition-all hover:shadow-lg hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
@@ -81,6 +94,9 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/50 via-white to-white px-4 pt-6 pb-4 sm:px-6 sm:pt-8 sm:pb-6 lg:px-8 lg:pt-10 lg:pb-8">
         <div className="container mx-auto max-w-7xl text-center">
+          {/* Subscription-aware banner (client component to prevent hydration errors) */}
+          <CanceledSubscriptionBannerWrapper />
+
           <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm sm:mb-3">
             <Sparkles className="h-4 w-4" />
             <span>Coming Soon</span>
@@ -94,21 +110,9 @@ export default function Home() {
             A calm, modern, and secure digital family dashboard that helps families stay organized, 
             connected, and informed — without chaos.
           </p>
-          <div className="mb-3 flex flex-col items-center justify-center gap-3 sm:mb-4 sm:flex-row">
-            <a
-              href="#join-waitlist"
-              className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:shadow-xl hover:shadow-blue-600/30 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 sm:w-auto"
-            >
-              Join Waitlist
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#how-it-works"
-              className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-zinc-300 bg-white px-8 py-3.5 text-base font-semibold text-zinc-900 transition-all hover:border-zinc-400 hover:bg-zinc-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2 sm:w-auto"
-            >
-              Learn More
-            </a>
-          </div>
+          
+          {/* Subscription-aware buttons (client component to prevent hydration errors) */}
+          <SubscriptionAwareButtons />
           
           {/* Trust Indicators & Quick Stats */}
           <div className="mb-3 flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-600 sm:mb-4 sm:gap-6">
@@ -641,6 +645,13 @@ export default function Home() {
                     <span>Photo storage</span>
                   </li>
                 </ul>
+                <a
+                  href="/signup"
+                  className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                >
+                  Get Started
+                  <ArrowRight className="h-5 w-5" />
+                </a>
               </div>
             </div>
           </div>

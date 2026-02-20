@@ -28,6 +28,13 @@ export async function POST(request: NextRequest) {
     }
 
     const { email } = await request.json();
+    
+    // Get the origin from the request to build correct signup URL
+    // This handles both www and non-www domains, and works in dev/prod
+    const origin = request.headers.get('origin') || 
+                   request.nextUrl.origin || 
+                   process.env.NEXT_PUBLIC_SITE_URL || 
+                   'https://fampo-marketing.com';
 
     // Validate email
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -80,6 +87,11 @@ export async function POST(request: NextRequest) {
     } else {
       try {
         console.log(`📧 Attempting to send welcome email to: ${email}`);
+        // Construct signup URL with email pre-filled
+        // Use origin from request to ensure correct domain (handles www/non-www)
+        const signupUrl = `${origin}/signup?email=${encodeURIComponent(email)}`;
+        console.log(`📧 Signup URL generated: ${signupUrl}`);
+
         const emailResult = await resend.emails.send({
           // IMPORTANT: Domain must be verified in Resend first!
           // 1. Go to Resend Dashboard → Domains → Add Domain: fampo-marketing.com
@@ -118,19 +130,29 @@ export async function POST(request: NextRequest) {
                 </div>
                 
                 <p style="margin-bottom: 20px;">
+                  <strong>Ready to get started?</strong>
+                </p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                  <a href="${signupUrl}" style="display: inline-block; background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%); color: white; text-decoration: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    Create Your Account Now →
+                  </a>
+                </div>
+                
+                <p style="margin-bottom: 20px;">
                   <strong>What happens next?</strong>
                 </p>
                 
                 <ol style="margin-bottom: 30px; padding-left: 20px;">
-                  <li style="margin-bottom: 10px;">Create your Fampo account (we'll send you the link when we're ready)</li>
+                  <li style="margin-bottom: 10px;">Create your Fampo account (click the button above or visit our website)</li>
                   <li style="margin-bottom: 10px;">Start your 2-month free trial immediately</li>
                   <li style="margin-bottom: 10px;">Enjoy all Family plan features during your trial</li>
                   <li style="margin-bottom: 10px;">After 2 months, continue at just $44 CAD/month (early bird price)</li>
                 </ol>
                 
-                <div style="text-align: center; margin: 30px 0;">
-                  <p style="margin-bottom: 15px; font-size: 16px; color: #6b7280;">
-                    We're putting the finishing touches on Fampo and will notify you as soon as it's ready!
+                <div style="background: #f9fafb; border-left: 4px solid #10b981; padding: 15px; margin: 20px 0; border-radius: 4px;">
+                  <p style="margin: 0; font-size: 14px; color: #065f46;">
+                    <strong>💡 Prefer to wait?</strong> No problem! You can create your account anytime by visiting our website and clicking "Sign Up".
                   </p>
                 </div>
                 
